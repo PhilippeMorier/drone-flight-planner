@@ -1,4 +1,5 @@
 import { AgmCoreModule } from '@agm/core';
+import { MdlModule } from '@angular-mdl/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FlightPlansComponent } from './flight-plans.component';
@@ -14,6 +15,7 @@ describe('FlightPlansComponent', () => {
         AgmCoreModule.forRoot({
           apiKey: 'AIzaSyCundKc3R8Yl8noBVA2FvZjPqRCyhvRTjw',
         }),
+        MdlModule,
       ],
     })
     .compileComponents();
@@ -43,7 +45,7 @@ describe('FlightPlansComponent', () => {
     }];
     fixture.detectChanges();
 
-    expect(fixture.nativeElement.querySelectorAll('li').length)
+    expect(fixture.nativeElement.querySelectorAll('mdl-list-item').length)
       .toEqual(component.flightPlans.length);
   });
 });
