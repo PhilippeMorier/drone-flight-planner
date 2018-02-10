@@ -10,10 +10,13 @@
     <div class="mdl-grid">
 
       <div class="mdl-cell mdl-cell--4-col">
-        <div *ngIf="!(flightPlans | async)">
+        <div *ngIf="!(flightPlans | async);else clickForEdit">
           You don't have any flight plans created. Create a new one by
           clicking the button bellow.
         </div>
+        <ng-template #clickForEdit>
+          Click on a flight plan in order to add points.
+        </ng-template>
 
         <dfp-flight-plans
           [flightPlans]="flightPlans | async"
