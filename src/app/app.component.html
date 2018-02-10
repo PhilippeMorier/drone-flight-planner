@@ -1,15 +1,20 @@
-<div>
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<button (click)="addFlightPlan()">Create</button>
-<dfp-flight-plans
-  [flightPlans]="flightPlans | async"
-  [activeFlightPlan]="activeFlightPlan | async"
-  (selectedFlightPlan)="setActiveFlightPlan($event)"
->
-</dfp-flight-plans>
-<dfp-flight-editor [flightPlan]="activeFlightPlan | async"></dfp-flight-editor>
+<mdl-layout #mdlLayout1="mdlLayout">
+  <mdl-layout-header mdl-layout-header-seamed>
+    <mdl-layout-header-row>
+      <mdl-layout-title>{{ title }}</mdl-layout-title>
+    </mdl-layout-header-row>
+  </mdl-layout-header>
+  <mdl-layout-content>
+    <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
+    <button (click)="addFlightPlan()">Create</button>
+    <dfp-flight-plans
+      [flightPlans]="flightPlans | async"
+      [activeFlightPlan]="activeFlightPlan | async"
+      (selectedFlightPlan)="setActiveFlightPlan($event)"
+    >
+    </dfp-flight-plans>
+
+    <dfp-flight-editor [flightPlan]="activeFlightPlan | async"></dfp-flight-editor>
+  </mdl-layout-content>
+</mdl-layout>

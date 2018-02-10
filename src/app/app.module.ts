@@ -1,4 +1,5 @@
 import { AgmCoreModule } from '@agm/core';
+import { MdlModule } from '@angular-mdl/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -21,6 +22,7 @@ import { FlightPlansService } from './service/flight-plans.service';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCundKc3R8Yl8noBVA2FvZjPqRCyhvRTjw',
     }),
+    MdlModule,
   ],
   providers: [
     FlightPlansService,
