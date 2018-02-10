@@ -1,9 +1,20 @@
 <mdl-list>
-  <mdl-list-item *ngFor="let flightPlan of flightPlans"
+  <mdl-list-item lines="2"
+                 *ngFor="let flightPlan of flightPlans"
                  (click)="emitFlightPlanSelected(flightPlan)">
+
     <mdl-list-item-primary-content>
-      {{ flightPlan.name }} ({{ flightPlan.coordinates.length }})
+      {{ flightPlan.name }}
+      <mdl-list-item-sub-title>
+        {{ flightPlan.coordinates.length }} Points
+      </mdl-list-item-sub-title>
     </mdl-list-item-primary-content>
-    <mdl-icon *ngIf="flightPlan.id === activeFlightPlan?.id">star</mdl-icon>
+
+    <mdl-list-item-secondary-content>
+      <mdl-list-item-secondary-info *ngIf="flightPlan.id === activeFlightPlan?.id">
+        Selected
+      </mdl-list-item-secondary-info>
+    </mdl-list-item-secondary-content>
+
   </mdl-list-item>
 </mdl-list>
