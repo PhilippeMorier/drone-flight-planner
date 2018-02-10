@@ -6,8 +6,17 @@ export class AppPage {
     return this;
   }
 
-  public clickCreate(): this {
-    element(by.css('button')).click();
+  public clickCreate(times: number = 1): this {
+    for (let i = 0; i < times; i++) {
+      element(by.css('button')).click();
+    }
+    return this;
+  }
+
+  public clickListItem(index: number): this {
+    element.all(by.css('mdl-list-item'))
+      .get(index)
+      .click();
     return this;
   }
 }
