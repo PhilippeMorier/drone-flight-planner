@@ -13,6 +13,13 @@ export class FlightEditorComponent {
   @Input()
   public flightPlan: FlightPlan;
 
+  public pix4DPosition: Coordinate = {
+    latitude: 46.516797406081835,
+    longitude: 6.561664938926697,
+  };
+  public defaultZoom: number = 17;
+  public defaultCircleRadius: number = 10;
+
   public addPoint($event: MouseEvent): void {
     this.flightPlan.coordinates.push(new Coordinate($event.coords));
   }

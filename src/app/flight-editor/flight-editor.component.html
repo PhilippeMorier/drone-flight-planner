@@ -1,14 +1,14 @@
 <ng-container *ngIf="flightPlan">
   <agm-map
-    [latitude]="46.516797406081835"
-    [longitude]="6.561664938926697"
-    [zoom]="17"
+    [latitude]="pix4DPosition.latitude"
+    [longitude]="pix4DPosition.longitude"
+    [zoom]="defaultZoom"
     (mapClick)="addPoint($event)"
   >
     <agm-circle *ngFor="let coordinate of flightPlan.coordinates"
                 [latitude]="coordinate.latitude"
                 [longitude]="coordinate.longitude"
-                [radius]="10"
+                [radius]="defaultCircleRadius"
     >
     </agm-circle>
     <agm-polyline>
