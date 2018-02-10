@@ -1,11 +1,13 @@
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
-  navigateTo() {
-    return browser.get('/');
+  public navigateTo(): this {
+    browser.get('/');
+    return this;
   }
 
-  getParagraphText() {
-    return element(by.css('dfp-root h1')).getText();
+  public clickCreate(): this {
+    element(by.css('button')).click();
+    return this;
   }
 }

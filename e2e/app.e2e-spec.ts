@@ -1,14 +1,22 @@
+import { by, element } from 'protractor';
+
 import { AppPage } from './app.po';
 
-describe('drone-flight-planner App', () => {
+describe('App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to dfp!');
+  it('should show all created plans', () => {
+    page
+      .navigateTo()
+      .clickCreate()
+      .clickCreate()
+      .clickCreate();
+
+    expect(element.all(by.css('mdl-list-item')).count())
+      .toEqual(3);
   });
 });
