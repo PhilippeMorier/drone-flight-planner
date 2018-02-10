@@ -1,5 +1,5 @@
-<mdl-layout>
-  <mdl-layout-header mdl-layout-header-seamed>
+<mdl-layout mdl-layout-header-seamed>
+  <mdl-layout-header>
     <mdl-layout-header-row>
       <mdl-layout-title>{{ title }}</mdl-layout-title>
     </mdl-layout-header-row>
@@ -15,7 +15,8 @@
           clicking the button bellow.
         </div>
         <ng-template #clickForEdit>
-          Click on a flight plan in order to add points.
+          Click on a flight plan in the list to start editing and click on the map
+          in order to add points.
         </ng-template>
 
         <dfp-flight-plans
