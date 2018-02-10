@@ -41,11 +41,6 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'Drone Flight Planner'`, async(() => {
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Drone Flight Planner');
-  }));
-
   it('should render title', async(() => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('mdl-layout-title').textContent)

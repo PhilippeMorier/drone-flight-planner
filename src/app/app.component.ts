@@ -10,7 +10,6 @@ import { FlightPlansService } from './service/flight-plans.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  public title: string = 'Drone Flight Planner';
   public activeFlightPlan: Observable<FlightPlan>;
   public flightPlans: Observable<FlightPlan[]>;
 
