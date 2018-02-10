@@ -8,6 +8,10 @@
     <router-outlet></router-outlet>
 
     <div id="panel-left">
+      <div *ngIf="!(flightPlans | async)">
+        You don't have any flight plans created. Create a new one by clicking the button bellow.
+      </div>
+
       <dfp-flight-plans
         [flightPlans]="flightPlans | async"
         [activeFlightPlan]="activeFlightPlan | async"
