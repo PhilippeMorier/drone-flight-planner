@@ -29,6 +29,6 @@ describe('App', () => {
       .clickListItem(0);
 
     expect(element.all(by.css('mdl-list-item')).get(0).getText())
-      .toContain('Selected');
+      .toContain('Editing');
   });
 });

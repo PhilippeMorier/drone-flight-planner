@@ -10,10 +10,11 @@
       </mdl-list-item-sub-title>
     </mdl-list-item-primary-content>
 
-    <mdl-list-item-secondary-content>
-      <mdl-list-item-secondary-info *ngIf="flightPlan.id === activeFlightPlan?.id">
-        Selected
+    <mdl-list-item-secondary-content *ngIf="flightPlan.id === activeFlightPlan?.id">
+      <mdl-list-item-secondary-info>
+        Editing
       </mdl-list-item-secondary-info>
+      <mdl-icon>mode-edit</mdl-icon>
     </mdl-list-item-secondary-content>
 
   </mdl-list-item>
