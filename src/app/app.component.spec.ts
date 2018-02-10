@@ -26,21 +26,40 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   }));
+
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
+
   it(`should have as title 'Drone Flight Planner'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Drone Flight Planner');
   }));
+
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent)
       .toContain('Welcome to Drone Flight Planner!');
+  }));
+
+  it(`should render one 'dfp-flight-plans'`, async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelectorAll('dfp-flight-plans').length)
+      .toEqual(1);
+  }));
+
+  it(`should render one 'dfp-flight-editor'`, async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelectorAll('dfp-flight-editor').length)
+      .toEqual(1);
   }));
 });
