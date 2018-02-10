@@ -1,8 +1,9 @@
-<ul>
-  <li *ngFor="let flightPlan of flightPlans"
-      (click)="emitFlightPlanSelected(flightPlan)"
-  >
-    {{ flightPlan.name }} ({{ flightPlan.coordinates.length }})
-    <span *ngIf="flightPlan.id === activeFlightPlan?.id">✓</span>
-  </li>
-</ul>
+<mdl-list>
+  <mdl-list-item *ngFor="let flightPlan of flightPlans"
+                 (click)="emitFlightPlanSelected(flightPlan)">
+    <mdl-list-item-primary-content>
+      {{ flightPlan.name }} ({{ flightPlan.coordinates.length }})
+    </mdl-list-item-primary-content>
+    <mdl-icon *ngIf="flightPlan.id === activeFlightPlan?.id">star</mdl-icon>
+  </mdl-list-item>
+</mdl-list>

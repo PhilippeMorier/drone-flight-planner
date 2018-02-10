@@ -7,14 +7,27 @@
   <mdl-layout-content>
     <router-outlet></router-outlet>
 
-    <button (click)="addFlightPlan()">Create</button>
-    <dfp-flight-plans
-      [flightPlans]="flightPlans | async"
-      [activeFlightPlan]="activeFlightPlan | async"
-      (selectedFlightPlan)="setActiveFlightPlan($event)"
-    >
-    </dfp-flight-plans>
+    <div id="panel-left">
+      <dfp-flight-plans
+        [flightPlans]="flightPlans | async"
+        [activeFlightPlan]="activeFlightPlan | async"
+        (selectedFlightPlan)="setActiveFlightPlan($event)"
+      >
+      </dfp-flight-plans>
 
-    <dfp-flight-editor [flightPlan]="activeFlightPlan | async"></dfp-flight-editor>
+      <button mdl-button
+              mdl-colored="primary"
+              mdl-button-type="raised"
+              mdl-ripple
+              (click)="addFlightPlan()"
+      >
+        Create
+      </button>
+    </div>
+
+    <div id="panel-right">
+      <dfp-flight-editor [flightPlan]="activeFlightPlan | async"></dfp-flight-editor>
+    </div>
+
   </mdl-layout-content>
 </mdl-layout>
