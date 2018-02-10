@@ -7,31 +7,34 @@
   <mdl-layout-content>
     <router-outlet></router-outlet>
 
-    <div id="panel-left">
-      <div *ngIf="!(flightPlans | async)">
-        You don't have any flight plans created. Create a new one by
-        clicking the button bellow.
+    <div class="mdl-grid">
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div *ngIf="!(flightPlans | async)">
+          You don't have any flight plans created. Create a new one by
+          clicking the button bellow.
+        </div>
+
+        <dfp-flight-plans
+          [flightPlans]="flightPlans | async"
+          [activeFlightPlan]="activeFlightPlan | async"
+          (selectedFlightPlan)="setActiveFlightPlan($event)"
+        >
+        </dfp-flight-plans>
+
+        <button mdl-button
+                mdl-colored="primary"
+                mdl-button-type="raised"
+                mdl-ripple
+                (click)="addFlightPlan()"
+        >
+          Create
+        </button>
       </div>
 
-      <dfp-flight-plans
-        [flightPlans]="flightPlans | async"
-        [activeFlightPlan]="activeFlightPlan | async"
-        (selectedFlightPlan)="setActiveFlightPlan($event)"
-      >
-      </dfp-flight-plans>
-
-      <button mdl-button
-              mdl-colored="primary"
-              mdl-button-type="raised"
-              mdl-ripple
-              (click)="addFlightPlan()"
-      >
-        Create
-      </button>
-    </div>
-
-    <div id="panel-right">
-      <dfp-flight-editor [flightPlan]="activeFlightPlan | async"></dfp-flight-editor>
+      <div class="mdl-cell mdl-cell--8-col">
+        <dfp-flight-editor [flightPlan]="activeFlightPlan | async"></dfp-flight-editor>
+      </div>
     </div>
 
   </mdl-layout-content>
