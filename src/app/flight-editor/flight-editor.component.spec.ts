@@ -30,4 +30,22 @@ describe('FlightEditorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should NOT render map with no FlightPlan set', () => {
+    expect(fixture.nativeElement.querySelectorAll('agm-map').length)
+      .toEqual(0);
+  });
+
+  it('should render map when FlightPlan is set', () => {
+    component.flightPlan = {
+      coordinates: [],
+      createdOn: new Date(),
+      id: 1,
+      name: 'First Test Plan',
+    };
+    fixture.detectChanges();
+
+    expect(fixture.nativeElement.querySelectorAll('agm-map').length)
+      .toEqual(1);
+  });
 });
