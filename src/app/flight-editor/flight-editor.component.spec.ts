@@ -39,7 +39,6 @@ describe('FlightEditorComponent', () => {
   it('should render map when FlightPlan is set', () => {
     component.flightPlan = {
       coordinates: [],
-      createdOn: new Date(),
       id: 1,
       name: 'First Test Plan',
     };

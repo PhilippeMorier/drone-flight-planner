@@ -1,7 +1,7 @@
 import 'rxjs/add/observable/of';
 import { Observable } from 'rxjs/Observable';
-
 import { Subject } from 'rxjs/Subject';
+
 import { FlightPlan } from '../model/flight-plan.model';
 
 export class FlightPlansService {
@@ -29,9 +29,8 @@ export class FlightPlansService {
   }
 
   public addEmptyFlightPlan(): void {
-    const emptyFlightPlan = {
+    const emptyFlightPlan: FlightPlan = {
       coordinates: [],
-      createdOn: new Date(),
       id: this.lastFlightPlanId++,
       name: 'Flight Plan ' + this.lastFlightPlanId,
     };
