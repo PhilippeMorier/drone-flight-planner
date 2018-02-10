@@ -33,7 +33,7 @@ export class FlightPlansService {
       coordinates: [],
       createdOn: new Date(),
       id: this.lastFlightPlanId++,
-      name: this.lastFlightPlanId + '. Flight Plan',
+      name: 'Flight Plan ' + this.lastFlightPlanId,
     };
     this.flightPlanList.push(emptyFlightPlan);
 
