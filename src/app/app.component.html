@@ -1,0 +1,15 @@
+<div>
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<button (click)="addFlightPlan()">Create</button>
+<dfp-flight-plans
+  [flightPlans]="flightPlans | async"
+  [activeFlightPlan]="activeFlightPlan | async"
+  (selectedFlightPlan)="setActiveFlightPlan($event)"
+>
+</dfp-flight-plans>
+<dfp-flight-editor [flightPlan]="activeFlightPlan | async"></dfp-flight-editor>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let flightPlan of flightPlans"
+      (click)="emitFlightPlanSelected(flightPlan)"
+  >
+    {{ flightPlan.name }} ({{ flightPlan.coordinates.length }})
+    <span *ngIf="flightPlan.id === activeFlightPlan?.id">✓</span>
+  </li>
+</ul>
