@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   public setActiveFlightPlan(flightPlan: FlightPlan): void {
-    this.flightPlansService.setActiveFlightPlan(flightPlan);
+    this.flightPlansService.setActiveFlightPlan(flightPlan.id);
   }
 
   public addFlightPlan(): void {
