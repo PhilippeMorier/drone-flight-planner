@@ -1,13 +1,16 @@
 # Drone Flight Planner
 This app allows creating multiple flight plans by choosing points on a map.
 
-An online version can be found on [this GitHub page](https://philippemorier.github.io/drone-flight-planner/).
+- For an online version see [this GitHub page](https://philippemorier.github.io/drone-flight-planner/)
+- For the test coverage see [this GitHub page](https://philippemorier.github.io/drone-flight-planner/coverage/)
+
 
 ## Useful commands
 - Run `npm install` to install the dependencies.
 - Run `npm start` for a dev server. Navigate to `http://localhost:4200/`.
 - Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 - Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Run `npm run test:coverage` to generate a code coverage html report
 
 ## Used technologies
 - Angular
