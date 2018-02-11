@@ -20,6 +20,7 @@ with `ng new drone-flight-planner --prefix dfp --routing true --style scss --ski
 
 ## Potential improvements
 - Considering `ngrx` for state management
+- Increase test coverage
 
 ## Potential features
 - [Fullstory](https://www.fullstory.com/) for session replay
