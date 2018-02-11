@@ -4,9 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --delete-output-path false",
     "build": "ng build --prod --base-href https://philippemorier.github.io/drone-flight-planner/ --output-hashing false",
     "test": "ng test",
+    "test:coverage": "ng test --single-run true --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "e2e:noserve": "npm run e2e -- --serve false"
