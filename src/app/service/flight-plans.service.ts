@@ -13,6 +13,7 @@ export class FlightPlansService {
 
   private flightPlanList: FlightPlan[] = [];
   private lastFlightPlanId: number = 0;
+  private readonly flightPlanNamePrefix: string = 'Flight Plan ';
 
   public constructor() {
     this.flightPlansSubject = new Subject<FlightPlan[]>();
@@ -21,9 +22,9 @@ export class FlightPlansService {
     this.activeFlightPlan = this.activeFlightPlanSubject.asObservable();
   }
 
-  public setActiveFlightPlan(flightPlan: FlightPlan): void {
+  public setActiveFlightPlan(flightPlanId: number): void {
     const activeFlightPlan = this.flightPlanList.find(
-      p => p.id === flightPlan.id,
+      flightPlan => flightPlan.id === flightPlanId,
     );
     this.activeFlightPlanSubject.next(activeFlightPlan);
   }
@@ -31,8 +32,8 @@ export class FlightPlansService {
   public addEmptyFlightPlan(): void {
     const emptyFlightPlan: FlightPlan = {
       coordinates: [],
-      id: this.lastFlightPlanId++,
-      name: 'Flight Plan ' + this.lastFlightPlanId,
+      id: ++this.lastFlightPlanId,
+      name: this.flightPlanNamePrefix + this.lastFlightPlanId,
     };
     this.flightPlanList.push(emptyFlightPlan);
 
